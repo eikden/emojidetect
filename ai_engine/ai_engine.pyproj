@@ -1,0 +1,84 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d7a557f1-d947-474e-bc8d-01ff8a50ffbd</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>ai_engine</Name>
+    <RootNamespace>ai_engine</RootNamespace>
+    <InterpreterId>CondaEnv|CondaEnv|emoji</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="config.ini" />
+    <Content Include="data\emoji.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="core\" />
+    <Folder Include="core\common\" />
+    <Folder Include="core\connector\" />
+    <Folder Include="core\models\" />
+    <Folder Include="core\migrations\" />
+    <Folder Include="core\query\" />
+    <Folder Include="log\" />
+    <Folder Include="data\" />
+    <Folder Include="workflow\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="core\connector\dbconfig.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="core\connector\ms_sql_connector.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="core\connector\my_sql_connector.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="core\connector\sqlite3_connector.py" />
+    <Compile Include="core\models\constant.py" />
+    <Compile Include="core\models\table.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="core\models\types_.py" />
+    <Compile Include="core\models\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="core\query\ms_query.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="core\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="setup.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|emoji" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

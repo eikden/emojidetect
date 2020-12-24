@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>2f6f895a-b153-4c7f-bca3-1e81133ee007</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>ai_api</Name>
+    <RootNamespace>ai_api</RootNamespace>
+    <InterpreterId>CondaEnv|CondaEnv|emoji</InterpreterId>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ai_api\decorators\after_request.py" />
+    <Compile Include="ai_api\decorators\before_request.py" />
+    <Compile Include="ai_api\decorators\login_required.py" />
+    <Compile Include="ai_api\decorators\roles_required.py" />
+    <Compile Include="ai_api\helper\status.py" />
+    <Compile Include="ai_api\message_sender\broker.py" />
+    <Compile Include="ai_api\models\Role.py" />
+    <Compile Include="ai_api\models\User.py" />
+    <Compile Include="ai_api\response\response.py" />
+    <Compile Include="ai_api\routes\login.py" />
+    <Compile Include="ai_api\routes\register.py" />
+    <Compile Include="config.py" />
+    <Compile Include="runserver.py" />
+    <Compile Include="ai_api\__init__.py" />
+    <Compile Include="ai_api\views.py" />
+    <Compile Include="setup.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ai_api\" />
+    <Folder Include="ai_api\helper\" />
+    <Folder Include="ai_api\message_sender\" />
+    <Folder Include="ai_api\models\" />
+    <Folder Include="ai_api\decorators\" />
+    <Folder Include="ai_api\response\" />
+    <Folder Include="ai_api\response\__pycache__\" />
+    <Folder Include="ai_api\routes\" />
+    <Folder Include="ai_api\static\" />
+    <Folder Include="ai_api\static\content\" />
+    <Folder Include="ai_api\static\fonts\" />
+    <Folder Include="ai_api\static\scripts\" />
+    <Folder Include="ai_api\templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ai_api\response\__pycache__\response.cpython-37.pyc" />
+    <Content Include="ai_api\static\style.css" />
+    <Content Include="ai_api\static\swagger.json" />
+    <Content Include="requirements.txt" />
+    <Content Include="ai_api\static\content\bootstrap.css" />
+    <Content Include="ai_api\static\content\bootstrap.min.css" />
+    <Content Include="ai_api\static\content\site.css" />
+    <Content Include="ai_api\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="ai_api\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="ai_api\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="ai_api\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="ai_api\static\scripts\bootstrap.js" />
+    <Content Include="ai_api\static\scripts\bootstrap.min.js" />
+    <Content Include="ai_api\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="ai_api\static\scripts\jquery-1.10.2.js" />
+    <Content Include="ai_api\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="ai_api\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="ai_api\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="ai_api\static\scripts\jquery.validate.js" />
+    <Content Include="ai_api\static\scripts\jquery.validate.min.js" />
+    <Content Include="ai_api\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="ai_api\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="ai_api\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="ai_api\static\scripts\respond.js" />
+    <Content Include="ai_api\static\scripts\respond.min.js" />
+    <Content Include="ai_api\static\scripts\_references.js" />
+    <Content Include="ai_api\templates\about.html" />
+    <Content Include="ai_api\templates\contact.html" />
+    <Content Include="ai_api\templates\index.html" />
+    <Content Include="ai_api\templates\layout.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|emoji" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
