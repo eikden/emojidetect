@@ -55,7 +55,7 @@ def create_app(test_config=None):
 
   with app.app_context():
     from ai_api.models import (User, Role)
-    from ai_api.routes import (login, register)
+    from ai_api.routes import (login, register, api_trigger)
     from ai_api.decorators import before_request, after_request
     
     db.create_all()

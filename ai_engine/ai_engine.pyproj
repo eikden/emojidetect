@@ -12,7 +12,7 @@
     <OutputPath>.</OutputPath>
     <Name>ai_engine</Name>
     <RootNamespace>ai_engine</RootNamespace>
-    <InterpreterId>CondaEnv|CondaEnv|emoji</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|emoji_emotion</InterpreterId>
     <TestFramework>Pytest</TestFramework>
     <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
     <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
@@ -35,6 +35,7 @@
     <Folder Include="core\connector\" />
     <Folder Include="core\models\" />
     <Folder Include="core\migrations\" />
+    <Folder Include="core\dummy\" />
     <Folder Include="core\query\" />
     <Folder Include="log\" />
     <Folder Include="data\" />
@@ -51,6 +52,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="core\connector\sqlite3_connector.py" />
+    <Compile Include="core\dummy\demo.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="core\models\constant.py" />
     <Compile Include="core\models\table.py">
       <SubType>Code</SubType>
@@ -68,9 +72,12 @@
     <Compile Include="setup.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="workflow\interface_demo.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="CondaEnv|CondaEnv|emoji" />
+    <InterpreterReference Include="CondaEnv|CondaEnv|emoji_emotion" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

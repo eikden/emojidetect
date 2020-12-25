@@ -21,7 +21,6 @@ from pathlib import Path
 
 current_path = os.path.dirname(os.path.abspath(__file__))
 dti_path = str(Path(current_path).parent) + '\\ai_engine'
-
 #This path will use for server environment setup
 sys.path.append(dti_path)
 if __name__ == '__main__':
