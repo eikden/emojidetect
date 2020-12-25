@@ -3,3 +3,4 @@ pytest==6.2.1
 flask_sqlalchemy==2.4.4
 flask-swagger-ui==3.36.0
 pymssql==2.1.5
+jwt==1.1.0
