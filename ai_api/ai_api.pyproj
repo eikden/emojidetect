@@ -39,6 +39,9 @@
     <Compile Include="ai_api\models\Role.py" />
     <Compile Include="ai_api\models\User.py" />
     <Compile Include="ai_api\response\response.py" />
+    <Compile Include="ai_api\routes\api_trigger.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ai_api\routes\login.py" />
     <Compile Include="ai_api\routes\register.py" />
     <Compile Include="config.py" />
