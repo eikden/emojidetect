@@ -17,7 +17,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>ai_api</Name>
     <RootNamespace>ai_api</RootNamespace>
-    <InterpreterId>CondaEnv|CondaEnv|emoji</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|emoji_emotion</InterpreterId>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
     <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
   </PropertyGroup>
@@ -95,7 +95,7 @@
     <Content Include="ai_api\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="CondaEnv|CondaEnv|emoji" />
+    <InterpreterReference Include="CondaEnv|CondaEnv|emoji_emotion" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
