@@ -27,9 +27,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="config.ini" />
+    <Content Include="core\emotion\animoji-alien-emojipedia.gif" />
+    <Content Include="core\emotion\animoji-lion-emojipedia.gif" />
     <Content Include="core\emotion\beaming_face_with_smiling_eyes_128.gif" />
     <Content Include="core\emotion\beaming_face_with_smiling_eyes_32.gif" />
     <Content Include="core\emotion\beaming_face_with_smiling_eyes_64.gif" />
+    <Content Include="core\emotion\giphy.gif" />
     <Content Include="core\emotion\money_mouth_face_128.gif" />
     <Content Include="core\emotion\money_mouth_face_32.gif" />
     <Content Include="core\emotion\money_mouth_face_64.gif" />
