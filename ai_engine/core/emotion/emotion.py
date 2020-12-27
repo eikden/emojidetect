@@ -10,9 +10,9 @@ ai_path = str(Path(current_path).parent) + '\\ai_engine\\core\\emotion\\'
 
 #define an enum to managing emoji path
 class emojis():
-    happy = ai_path+'beaming_face_with_smiling_eyes_128.gif'
-    surprise = ai_path+'money_mouth_face_128.gif'
-    other = ai_path+'thinking_face_128.gif'
+    happy = ai_path+'animoji-lion-emojipedia.gif'
+    surprise = ai_path+'animoji-alien-emojipedia.gif'
+    other = ai_path+'giphy.gif'
 
 # Function for implementing the loading animation
 def get_emotion(emoji):
@@ -21,4 +21,9 @@ def get_emotion(emoji):
     for frame in ImageSequence.Iterator(im):
         frame = frame.convert('RGB')
         cv2_frame = numpy.array(frame)
-    return pic_name, cv2_frame
+        show_frame = cv2.cvtColor(cv2_frame, cv2.COLOR_RGB2BGR)    
+        cv2.imshow(pic_name, show_frame)
+        #pauses for 3 seconds before fetching next image
+        key = cv2.waitKey(50)
+
+    return pic_name
