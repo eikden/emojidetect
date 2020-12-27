@@ -26,11 +26,17 @@
   <ItemGroup>
     <Folder Include="core\" />
     <Folder Include="core\connector\" />
+    <Folder Include="research\" />
+    <Folder Include="workflow\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="core\connector\sqlite3_connector_test.py" />
     <Compile Include="core\connector\ms_sql_connector_test.py" />
     <Compile Include="initial.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="research\main.py" />
+    <Compile Include="workflow\interface_test.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
