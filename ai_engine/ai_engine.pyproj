@@ -27,6 +27,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="config.ini" />
+    <Content Include="core\emotion\beaming_face_with_smiling_eyes_128.gif" />
+    <Content Include="core\emotion\beaming_face_with_smiling_eyes_32.gif" />
+    <Content Include="core\emotion\beaming_face_with_smiling_eyes_64.gif" />
+    <Content Include="core\emotion\money_mouth_face_128.gif" />
+    <Content Include="core\emotion\money_mouth_face_32.gif" />
+    <Content Include="core\emotion\money_mouth_face_64.gif" />
+    <Content Include="core\emotion\thinking_face_128.gif" />
+    <Content Include="core\emotion\thinking_face_32.gif" />
+    <Content Include="core\emotion\thinking_face_64.gif" />
     <Content Include="data\emoji.db" />
   </ItemGroup>
   <ItemGroup>
@@ -36,6 +45,7 @@
     <Folder Include="core\models\" />
     <Folder Include="core\migrations\" />
     <Folder Include="core\dummy\" />
+    <Folder Include="core\emotion\" />
     <Folder Include="core\query\" />
     <Folder Include="log\" />
     <Folder Include="data\" />
@@ -55,6 +65,9 @@
     <Compile Include="core\dummy\demo.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="core\emotion\emotion.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="core\models\constant.py" />
     <Compile Include="core\models\table.py">
       <SubType>Code</SubType>
@@ -72,7 +85,7 @@
     <Compile Include="setup.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="workflow\interface_demo.py">
+    <Compile Include="workflow\interface.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
