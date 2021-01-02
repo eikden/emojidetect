@@ -12,7 +12,7 @@
     <OutputPath>.</OutputPath>
     <Name>ai_engine</Name>
     <RootNamespace>ai_engine</RootNamespace>
-    <InterpreterId>CondaEnv|CondaEnv|emoji_emotion</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|emoji_detect</InterpreterId>
     <TestFramework>Pytest</TestFramework>
     <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
     <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
@@ -93,7 +93,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="CondaEnv|CondaEnv|emoji_emotion" />
+    <InterpreterReference Include="CondaEnv|CondaEnv|emoji_detect" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
