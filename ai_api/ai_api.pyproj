@@ -72,6 +72,7 @@
     <Content Include="ai_api\static\images\surprise.gif" />
     <Content Include="ai_api\static\images\neutral.gif" />
     <Content Include="ai_api\static\images\um-logo-402x203.png" />
+    <Content Include="ai_api\static\scripts\app.js" />
     <Content Include="ai_api\static\scripts\jquery-3.5.1.min.js" />
     <Content Include="ai_api\static\scripts\jquery-3.5.1.min.map" />
     <Content Include="ai_api\static\style.css" />
