@@ -47,6 +47,10 @@
                 }); 
             });
         });
+
+        $("#recordButton").click(function () {
+            $("#recordingsList").empty()
+        });
     });
 </script>
 <div class="c-main">
@@ -61,9 +65,20 @@
                             <span class="input-group-text" id="inputGroup-sizing-default">Input (Happy or Suprise): </span>
                             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="input_emotion">
                         </div>
+                        <br />
+                        <p><strong>Record voice and submit to detect emotion:</strong></p>
+                        <div id="controls">
+                            <button id="recordButton">Record</button>
+                            <button id="pauseButton" disabled>Pause</button>
+                            <button id="stopButton" disabled>Stop</button>
+                        </div>
+                        <div id="formats">Format: start recording to see sample rate</div>
+                        <p><strong>Recordings:</strong></p>
+                        <ol id="recordingsList"></ol>
                     </div>
                     <footer class="card-footer">
                         <input class="btn btn-primary btn-sm" id="btnSubmit" value="Submit (Text Only)"></input>
+                        <input class="btn btn-primary btn-sm" id="btnUpload" value="Upload"></input>
                     </footer>
                 </div>
             </div>
