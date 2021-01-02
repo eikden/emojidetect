@@ -15,15 +15,16 @@ class emojis():
     other = ai_path+'giphy.gif'
 
 # Function for implementing the loading animation
-def get_emotion(emoji):
+def get_emotion(emoji, debug, duration):
     pic_name = emoji
     im = Image.open(pic_name)
-    for frame in ImageSequence.Iterator(im):
-        frame = frame.convert('RGB')
-        cv2_frame = numpy.array(frame)
-        show_frame = cv2.cvtColor(cv2_frame, cv2.COLOR_RGB2BGR)    
-        cv2.imshow(pic_name, show_frame)
-        #pauses for 3 seconds before fetching next image
-        key = cv2.waitKey(50)
+    if debug==True:
+        for frame in ImageSequence.Iterator(im):
+            frame = frame.convert('RGB')
+            cv2_frame = numpy.array(frame)
+            show_frame = cv2.cvtColor(cv2_frame, cv2.COLOR_RGB2BGR)    
+            cv2.imshow(pic_name, show_frame)
+            #pauses for depend on duration parameter before fetching next image
+            key = cv2.waitKey(duration)
 
     return pic_name

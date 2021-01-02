@@ -40,3 +40,74 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.navbar-inverse {
+    background-color: #ffffff !important;
+    border-color: #09145a !important;
+}
+
+    .navbar-inverse .navbar-brand {
+        color: #09145a !important;
+    }
+
+        .navbar-inverse .navbar-brand:hover {
+            color: #e23250 !important;
+        }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #09145a !important;
+    }
+
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: #e23250 !important;
+        }
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: .25rem;
+    background-color: #fff;
+    border: 1px solid #d8dbe0;
+}
+
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid;
+    border-color: #d8dbe0;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+}
+
+.card-footer {
+    padding: .75rem 1.25rem;
+    background-color: #fff;
+    border-color: currentcolor #d8dbe0 #d8dbe0;
+    border-top: 1px solid #d8dbe0;
+}
+
+.c-main {
+    flex-basis: auto;
+    flex-shrink: 0;
+    flex-grow: 1;
+    min-width: 0;
+    padding-top: 2rem;
+}

@@ -12,7 +12,7 @@
     <OutputPath>.</OutputPath>
     <Name>ai_engine_unit_test</Name>
     <RootNamespace>ai_engine_unit_test</RootNamespace>
-    <InterpreterId>CondaEnv|CondaEnv|emoji_emotion</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|emoji_detect</InterpreterId>
     <TestFramework>unittest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -45,7 +45,7 @@
     <Content Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="CondaEnv|CondaEnv|emoji_emotion" />
+    <InterpreterReference Include="CondaEnv|CondaEnv|emoji_detect" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
