@@ -20,3 +20,7 @@ def detect_emotion(emotion, debug=False):
         pic_name = get_emotion(emoji_path, debug, 100)
         
     return emotion, emoji_path
+
+def process_speech(voice):
+    status = 'successful upload.'
+    return status
