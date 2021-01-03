@@ -21,6 +21,7 @@ def detect_emotion(emotion, debug=False):
         
     return emotion, emoji_path
 
-def process_speech(voice):
+def process_speech(voice_path):
+    print(str(voice_path))
     status = 'successful upload.'
     return status

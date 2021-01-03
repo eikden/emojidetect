@@ -30,14 +30,14 @@ def detect_emoji():
 def upload_speech():
     try:
         if request.method == "POST":
-            print(dti_path)
-            f = open(dti_path+'\\ai_engine\\data\\file.wav', 'wb')
+            filepath = dti_path+'\\ai_engine\\data\\file.wav'
+            f = open(filepath, 'wb')
             f.write(request.get_data("audio_data"))
             f.close()
             #if os.path.isfile('./file.wav'):
             #    print("./file.wav exists")
 
-            #status = process_speech(dti_path++'\\ai_engine\\data\\file.wav')
+            status = process_speech(filepath)
         return Success({'message':'Completed.', 'data': 'success'})
     except Exception as error:
         return Failure({ 'message': str(error) }, debug = True )
