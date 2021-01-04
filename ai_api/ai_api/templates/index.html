@@ -27,16 +27,16 @@
                         {
                             var emotion_status = v.data[0]
                             if (emotion_status == "happy") {
-                                $('#lblStatus').html("Happy");
-                                $('#showEmotion').attr("src", "../static/images/happy.gif");
+                                $('#lblStatus3').html("Happy");
+                                $('#showEmotion3').attr("src", "../static/images/happy.gif");
                             }
                             else if (emotion_status == "surprise") {
-                                $('#lblStatus').html("Surprise");
-                                $('#showEmotion').attr("src", "../static/images/surprise.gif");
+                                $('#lblStatus3').html("Surprise");
+                                $('#showEmotion3').attr("src", "../static/images/surprise.gif");
                             }
                             else {
-                                $('#lblStatus').html("Other");
-                                $('#showEmotion').attr("src", "../static/images/neutral.gif");
+                                $('#lblStatus3').html("Other");
+                                $('#showEmotion3').attr("src", "../static/images/neutral.gif");
                             }
                         }
                         else
@@ -112,15 +112,63 @@
                 </div>
             </div>
             <div class="col-12 col-md-6">
-                <div class="card">
-                    <header class="card-header"><b>Result</b></header>
-                    <div class="card-body">
-                        <div id="lblStatus" class="alert alert-success" role="alert">
-                            Other
+                <div id="lblStatus" class="alert alert-success" role="alert">
+                    Emoji Detection by Speech!
+                </div>
+                <div class="accordion" id="myAccordion">
+                    <div class="panel">
+                        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapsible-1" data-parent="#myAccordion">Group 1</button>
+                        <div id="collapsible-1" class="collapse">
+                            <div class="card">
+                                <header class="card-header"><b>Result</b></header>
+                                <div class="card-body">
+
+                                    <div id='group_1_result'>
+                                        <div id="lblStatus1" class="d-flex p-2 bd-highlight" role="alert">
+                                            Other
+                                        </div>
+                                        <img id="showEmotion1" src="../static/images/neutral.gif" style="width:50%" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <img id="showEmotion" src="../static/images/neutral.gif" style="width:100%" />
+                    </div>
+                    <div class="panel">
+                        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapsible-2" data-parent="#myAccordion">Group 2</button>
+                        <div id="collapsible-2" class="collapse">
+                            <div class="card">
+                                <header class="card-header"><b>Result</b></header>
+                                <div class="card-body">
+
+                                    <div id='group_2_result'>
+                                        <div id="lblStatus2" class="d-flex p-2 bd-highlight" role="alert">
+                                            Other
+                                        </div>
+                                        <img id="showEmotion2" src="../static/images/neutral.gif" style="width:50%" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapsible-3" data-parent="#myAccordion">Group 3</button>
+                        <div id="collapsible-3" class="collapse">
+                            <div class="card">
+                                <header class="card-header"><b>Result</b></header>
+                                <div class="card-body">
+                                    <div id='group_3_result'>
+                                        <div id="lblStatus3" class="d-flex p-2 bd-highlight" role="alert">
+                                            Other
+                                        </div>
+                                        <img id="showEmotion3" src="../static/images/neutral.gif" style="width:50%" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

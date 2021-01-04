@@ -34,10 +34,13 @@ def upload_speech():
             f = open(filepath, 'wb')
             f.write(request.get_data("audio_data"))
             f.close()
-            #if os.path.isfile('./file.wav'):
-            #    print("./file.wav exists")
+           
+            emotion_results = process_speech(filepath)
 
-            status = process_speech(filepath)
-        return Success({'message':'Completed.', 'data': 'success'})
+            result = ''
+            for emotion_result in emotion_results:
+                result = result + emotion_result + ';'
+
+        return Success({'message':'Completed.', 'data': result})
     except Exception as error:
         return Failure({ 'message': str(error) }, debug = True )
