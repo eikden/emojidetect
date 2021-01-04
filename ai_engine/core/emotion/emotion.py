@@ -28,3 +28,8 @@ def get_emotion(emoji, debug, duration):
             key = cv2.waitKey(duration)
 
     return pic_name
+
+#Group 3 emotion validation checking
+def group_3_emotion_validation(param):
+    emotion = param
+    return emotion

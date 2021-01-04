@@ -173,3 +173,16 @@ audio {
 #recordingsList {
     max-width: 28em;
 }
+
+.bd-highlight {
+    background-color: rgba(86,61,124,0.15);
+    border: 1px solid rgba(86,61,124,0.15);
+}
+
+.p-2 {
+    padding: .5rem !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
