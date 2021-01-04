@@ -67,9 +67,14 @@
     <Folder Include="ai_api\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ai_api\favicon.ico" />
     <Content Include="ai_api\response\__pycache__\response.cpython-37.pyc" />
     <Content Include="ai_api\static\content\bootstrap-theme.css" />
+    <Content Include="ai_api\static\content\bootstrap-theme.css.map" />
     <Content Include="ai_api\static\content\bootstrap-theme.min.css" />
+    <Content Include="ai_api\static\content\bootstrap-theme.min.css.map" />
+    <Content Include="ai_api\static\content\bootstrap.css.map" />
+    <Content Include="ai_api\static\content\bootstrap.min.css.map" />
     <Content Include="ai_api\static\favicon.ico" />
     <Content Include="ai_api\static\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="ai_api\static\images\surprise.gif" />
@@ -82,6 +87,7 @@
     <Content Include="ai_api\static\style.css" />
     <Content Include="ai_api\static\swagger.json" />
     <Content Include="ai_api\static\images\happy.gif" />
+    <Content Include="favicon.ico" />
     <Content Include="requirements.txt" />
     <Content Include="ai_api\static\content\bootstrap.css" />
     <Content Include="ai_api\static\content\bootstrap.min.css" />

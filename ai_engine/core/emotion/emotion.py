@@ -31,5 +31,5 @@ def get_emotion(emoji, debug, duration):
 
 #Group 3 emotion validation checking
 def group_3_emotion_validation(param):
-    emotion = param
+    emotion = "happy"
     return emotion

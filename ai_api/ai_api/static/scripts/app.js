@@ -154,8 +154,37 @@ function createDownloadLink(blob) {
 		var xhr = new XMLHttpRequest();
 		xhr.onload = function (e) {
 			if (this.readyState === 4) {
-				console.log("Server returned: ", e.target.responseText);
+				var data = e.target.responseText;
+				console.log("Server returned: ", data);
+				var jsonResponse = JSON.parse(data);
+				var result = jsonResponse.message.data.split(';');
+				console.log(result[0])
+				console.log(result[1])
+				console.log(result[2])
+
 				document.getElementById("lblStatus").innerHTML = "Successfully upload.";
+
+				//for group 1 result
+				var group1 = result[0]
+
+				//for group 2 result
+				var group2 = result[1]
+
+				//for group 3 result
+				var group3 = result[2]
+				if (group3 == "happy") {
+					document.getElementById("lblStatus3").innerHTML = "Happy";
+					document.getElementById("showEmotion3").setAttribute("src", "../static/images/happy.gif");
+				}
+				else if (group3 == "surprise") {
+					document.getElementById("lblStatus3").innerHTML = "surprise";
+					document.getElementById("showEmotion3").setAttribute("src", "../static/images/surprise.gif");
+				}
+				else{
+					document.getElementById("lblStatus3").innerHTML = "Other";
+					document.getElementById("showEmotion3").setAttribute("src", "../static/images/neutral.gif");
+				}
+				
 			}
 		};
 		var fd = new FormData();
