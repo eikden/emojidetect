@@ -1,4 +1,6 @@
-from core.emotion.emotion import emojis, get_emotion, group_3_emotion_validation
+from core.emotion.emotion3 import emojis, get_emotion, emotion_validation
+from core.emotion.emotion2 import *
+from core.emotion.emotion1 import *
 import numpy
 import cv2
 import PIL

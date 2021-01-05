@@ -34,7 +34,18 @@
                                 $('#lblStatus3').html("Surprise");
                                 $('#showEmotion3').attr("src", "../static/images/surprise.gif");
                             }
+                            else if (emotion_status == "angry") {
+                                $('#lblStatus1').html("Angry");
+                                $('#showEmotion1').attr("src", "../static/images/angry.gif");
+                            }
                             else {
+
+                                $('#lblStatus1').html("Other");
+                                $('#showEmotion1').attr("src", "../static/images/neutral.gif");
+
+                                $('#lblStatus2').html("Other");
+                                $('#showEmotion2').attr("src", "../static/images/neutral.gif");
+
                                 $('#lblStatus3').html("Other");
                                 $('#showEmotion3').attr("src", "../static/images/neutral.gif");
                             }
