@@ -30,6 +30,10 @@ def get_emotion(emoji, debug, duration):
     return pic_name
 
 #Group 3 emotion validation checking
-def group_3_emotion_validation(param):
+def emotion_validation(param):
     emotion = "happy"
+    #write your logic here
+
+    #return result have to be in string where the emotion that you setup for front-end must be align. 
+
     return emotion
