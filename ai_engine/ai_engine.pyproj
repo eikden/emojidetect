@@ -30,12 +30,17 @@
     <Content Include="core\emotion\animoji-alien-emojipedia.gif" />
     <Content Include="core\emotion\animoji-lion-emojipedia.gif" />
     <Content Include="core\emotion\giphy.gif" />
+    <Content Include="core\emotion\train_model\1.wav" />
+    <Content Include="core\emotion\train_model\2.wav" />
+    <Content Include="core\emotion\train_model\3.wav" />
+    <Content Include="core\emotion\train_model\4.wav" />
     <Content Include="data\emoji.db" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="core\" />
     <Folder Include="core\common\" />
     <Folder Include="core\connector\" />
+    <Folder Include="core\emotion\train_model\" />
     <Folder Include="core\models\" />
     <Folder Include="core\migrations\" />
     <Folder Include="core\dummy\" />

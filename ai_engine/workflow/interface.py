@@ -16,6 +16,12 @@ def detect_emotion(emotion, debug=False):
     elif(emotion=="surprise"):
         emoji_path = emojis.surprise
         pic_name = get_emotion(emoji_path, debug, 100)
+    elif(emotion=="angry"):
+        #do something
+        emotion = "angry"
+    elif(emotion=="disgust"):
+        #do something
+        emotion="disgust"
     else:
         emotion="other"
         emoji_path = emojis.other
@@ -33,6 +39,6 @@ def process_speech(voice_path):
     emotion_result.append("Other")
 
     #group 3 result
-    emotion_result.append(group_3_emotion_validation(voice_path))
-    
+    emotion_result.append(emotion_validation(voice_path))
+    #emotion_result.append("happy")
     return emotion_result
