@@ -58,9 +58,11 @@ def emotion_validation(voice_path):
     emotion_status = ''
     if flag == 0:
         emotion_status = 'happy'
-    if flag == 1:
+    elif flag == 1:
         emotion_status = 'surprise'
-    if flag == 2:
+    elif flag == 2:
+        emotion_status = 'happy'
+    else:
         emotion_status = 'other'
    
     print('Emotion status: {0}'.format(emotion_status))
