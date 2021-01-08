@@ -6,6 +6,7 @@ from ai_api.decorators.login_required import login_required
 from ai_api.response.response import Success, Failure
 import sys
 import os
+import io
 from pathlib import Path
 
 current_path = os.path.dirname(os.path.abspath(__file__))
@@ -31,10 +32,11 @@ def upload_speech():
     try:
         if request.method == "POST":
             filepath = dti_path+'\\ai_engine\\data\\file.wav'
-            f = open(filepath, 'wb')
-            f.write(request.get_data("audio_data"))
-            f.close()
-           
+            audit_file = request.files["audio_data"]
+            with open(filepath, 'wb') as audio:
+                audit_file.save(audio)
+            print('file uploaded successfully')
+            
             emotion_results = process_speech(filepath)
 
             result = ''
