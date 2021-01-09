@@ -2,7 +2,7 @@
 from PIL import Image, ImageSequence
 import cv2
 import numpy
-import os
+import os, os.path
 import sys
 import scipy.io.wavfile as wav
 from python_speech_features import mfcc
@@ -43,7 +43,7 @@ def emotion_validation(voice_path):
     #emotion = "happy"
     #write your logic here
     #record()
-    model = Model()
+    model, files = Model()
     print('model: {0}'.format('Initial model'))
     my_mfcc = My_Mfcc(voice_path)
     print('read: {0}'.format('Read model'))
@@ -71,11 +71,16 @@ def emotion_validation(voice_path):
 
 def Model():
     model = []
-    for i in range(1, 5):
-        fs, audio = wav.read(ai_path+"\\train_model\\"+str(i)+".wav")
+    DIR = ai_path+"\\train_model\\"
+    files = [name for name in os.listdir(DIR) if os.path.isfile(os.path.join(DIR, name))]
+    print('Files: {0}'.format(files))
+    total_files = len(files)
+    print('Total files: {0}'.format(total_files))
+    for i in range(1, total_files):
+        fs, audio = wav.read(DIR+files[i])
         feature_mfcc = mfcc(audio, samplerate=fs)
         model.append(feature_mfcc)
-    return model
+    return model, files
 
 def My_Mfcc(voice_path):
     print('voice path: {0}'.format(voice_path))
