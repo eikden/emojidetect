@@ -30,10 +30,6 @@
     <Content Include="core\emotion\animoji-alien-emojipedia.gif" />
     <Content Include="core\emotion\animoji-lion-emojipedia.gif" />
     <Content Include="core\emotion\giphy.gif" />
-    <Content Include="core\emotion\train_model\1.wav" />
-    <Content Include="core\emotion\train_model\2.wav" />
-    <Content Include="core\emotion\train_model\3.wav" />
-    <Content Include="core\emotion\train_model\4.wav" />
     <Content Include="data\emoji.db" />
   </ItemGroup>
   <ItemGroup>

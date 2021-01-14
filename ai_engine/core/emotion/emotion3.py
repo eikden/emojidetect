@@ -49,19 +49,19 @@ def emotion_validation(voice_path):
     print('read: {0}'.format('Read model'))
     flag = 0
     min_dis = DTW(my_mfcc, model[0])
+    print('min_dis: {0}'.format(min_dis))
     for i in range(1, len(model)):
         dis = DTW(my_mfcc, model[i])
         if min_dis > dis:
             min_dis = dis
             flag = i
+            print('file name: {0}; flag: {1}'.format(files[i], flag))
 
     emotion_status = ''
-    if flag == 0:
+    if flag > 1 and flag < 200:
         emotion_status = 'happy'
-    elif flag == 1:
+    elif flag> 201 and flag < 400:
         emotion_status = 'surprise'
-    elif flag == 2:
-        emotion_status = 'happy'
     else:
         emotion_status = 'other'
    
