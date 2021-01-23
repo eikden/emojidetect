@@ -30,6 +30,30 @@
     <Content Include="core\emotion\animoji-alien-emojipedia.gif" />
     <Content Include="core\emotion\animoji-lion-emojipedia.gif" />
     <Content Include="core\emotion\giphy.gif" />
+    <Content Include="core\emotion\train_model\0.wav" />
+    <Content Include="core\emotion\train_model\1.wav" />
+    <Content Include="core\emotion\train_model\2.wav" />
+    <Content Include="core\emotion\train_model\3.wav" />
+    <Content Include="core\emotion\train_model\4.wav" />
+    <Content Include="core\emotion\train_model\5.wav" />
+    <Content Include="core\emotion\train_model\6.wav" />
+    <Content Include="core\emotion\train_model\7.wav" />
+    <Content Include="core\emotion\train_model\8.wav" />
+    <Content Include="core\emotion\train_model_1\mlp_classifier.model" />
+    <Content Include="core\emotion\train_model_2\fear_ref\03-01-06-02-01-02-03.wav" />
+    <Content Include="core\emotion\train_model_2\fear_ref\03-01-06-02-01-02-06.wav" />
+    <Content Include="core\emotion\train_model_2\fear_ref\03-01-06-02-01-02-20.wav" />
+    <Content Include="core\emotion\train_model_2\fear_ref\03-01-06-02-02-02-06.wav" />
+    <Content Include="core\emotion\train_model_2\fear_ref\03-01-06-02-02-02-08.wav" />
+    <Content Include="core\emotion\train_model_2\fear_ref\03-01-06-02-02-02-20.wav" />
+    <Content Include="core\emotion\train_model_2\sad_ref\03-01-04-02-01-02-06.wav" />
+    <Content Include="core\emotion\train_model_2\sad_ref\03-01-04-02-01-02-07.wav" />
+    <Content Include="core\emotion\train_model_2\sad_ref\03-01-04-02-01-02-15.wav" />
+    <Content Include="core\emotion\train_model_2\sad_ref\03-01-04-02-01-02-24.wav" />
+    <Content Include="core\emotion\train_model_2\sad_ref\03-01-04-02-02-02-03.wav" />
+    <Content Include="core\emotion\train_model_2\sad_ref\03-01-04-02-02-02-06.wav" />
+    <Content Include="core\emotion\train_model_2\sad_ref\03-01-04-02-02-02-07.wav" />
+    <Content Include="core\emotion\train_model_2\sad_ref\03-01-04-02-02-02-10.wav" />
     <Content Include="data\emoji.db" />
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +61,10 @@
     <Folder Include="core\common\" />
     <Folder Include="core\connector\" />
     <Folder Include="core\emotion\train_model\" />
+    <Folder Include="core\emotion\train_model_1\" />
+    <Folder Include="core\emotion\train_model_2\" />
+    <Folder Include="core\emotion\train_model_2\fear_ref\" />
+    <Folder Include="core\emotion\train_model_2\sad_ref\" />
     <Folder Include="core\models\" />
     <Folder Include="core\migrations\" />
     <Folder Include="core\dummy\" />

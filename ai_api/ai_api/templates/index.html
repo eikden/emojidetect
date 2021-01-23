@@ -23,8 +23,7 @@
                 var json = $.parseJSON(response);
                 $(json).each(function (i, val) {
                     $.each(val, function (k, v) {
-                        if (k == "message")
-                        {
+                        if (k == "message") {
                             var emotion_status = v.data[0]
                             if (emotion_status == "happy") {
                                 $('#lblStatus3').html("Happy");
@@ -38,24 +37,60 @@
                                 $('#lblStatus1').html("Angry");
                                 $('#showEmotion1').attr("src", "../static/images/angry.gif");
                             }
+                            else if (emotion_status == "disgust") {
+                                $('#lblStatus1').html("Disgust");
+                                $('#showEmotion1').attr("src", "../static/images/disgust.gif");
+                            }
+
+                            else if (emotion_status == "sad") {
+                                $('#lblStatus2').html("Sad");
+                                $('#showEmotion2').attr("src", "../static/images/sad.gif");
+                            }
+                            else if (emotion_status == "fear") {
+                                $('#lblStatus2').html("Fear");
+                                $('#showEmotion2').attr("src", "../static/images/fear.gif");
+                            }
+                            else if (emotion_status == "weak sad") {
+                                $('#lblStatus2').html("Weak Sad");
+                                $('#showEmotion2').attr("src", "../static/images/weak sad.gif");
+                            }
+                            else if (emotion_status == "mid sad") {
+                                $('#lblStatus2').html("Mid Sad");
+                                $('#showEmotion2').attr("src", "../static/images/mid sad.gif");
+                            }
+                            else if (emotion_status == "very sad") {
+                                $('#lblStatus2').html("Very Sad");
+                                $('#showEmotion2').attr("src", "../static/images/very sad.gif");
+                            }
+                            else if (emotion_status == "weak fear") {
+                                $('#lblStatus2').html("Weak Fear");
+                                $('#showEmotion2').attr("src", "../static/images/weak fear.gif");
+                            }
+                            else if (emotion_status == "mid fear") {
+                                $('#lblStatus2').html("Mid Fear");
+                                $('#showEmotion2').attr("src", "../static/images/mid fear.gif");
+                            }
+                            else if (emotion_status == "very fear") {
+                                $('#lblStatus2').html("Very Fear");
+                                $('#showEmotion2').attr("src", "../static/images/very fear.gif");
+                            }
                             else {
 
                                 $('#lblStatus1').html("Other");
-                                $('#showEmotion1').attr("src", "../static/images/neutral.gif");
+                                $('#showEmotion1').attr("src", "../static/images/neutral_1.gif");
 
                                 $('#lblStatus2').html("Other");
-                                $('#showEmotion2').attr("src", "../static/images/neutral.gif");
+                                $('#showEmotion2').attr("src", "../static/images/neutral_1.gif");
 
                                 $('#lblStatus3').html("Other");
                                 $('#showEmotion3').attr("src", "../static/images/neutral.gif");
                             }
                         }
-                        else
-                        {
+                        else {
                             console.log(k + " : " + v);
                         }
                     });
-                }); 
+                });
             });
         });
 
@@ -65,7 +100,7 @@
 
         //$("#btnUpload").click(function () {
         //    $('#lblStatus').html("Uploading...");
-            
+
         //    var form = new FormData();
         //    form.append("upload_speech", filename);
 
@@ -138,7 +173,7 @@
                                         <div id="lblStatus1" class="d-flex p-2 bd-highlight" role="alert">
                                             Other
                                         </div>
-                                        <img id="showEmotion1" src="../static/images/neutral.gif" style="width:50%" />
+                                        <img id="showEmotion1" src="../static/images/neutral_1.gif" style="width:50%" />
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +190,7 @@
                                         <div id="lblStatus2" class="d-flex p-2 bd-highlight" role="alert">
                                             Other
                                         </div>
-                                        <img id="showEmotion2" src="../static/images/neutral.gif" style="width:50%" />
+                                        <img id="showEmotion2" src="../static/images/neutral_1.gif" style="width:50%" />
                                     </div>
 
                                 </div>

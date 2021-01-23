@@ -58,9 +58,9 @@ def emotion_validation(voice_path):
             print('file name: {0}; flag: {1}'.format(files[i], flag))
 
     emotion_status = ''
-    if flag > 1 and flag < 200:
+    if flag > 0 and flag < 10:
         emotion_status = 'happy'
-    elif flag> 201 and flag < 400:
+    elif flag> 11 and flag < 20:
         emotion_status = 'surprise'
     else:
         emotion_status = 'other'

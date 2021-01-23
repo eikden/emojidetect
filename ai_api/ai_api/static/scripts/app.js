@@ -166,9 +166,54 @@ function createDownloadLink(blob) {
 
 				//for group 1 result
 				var group1 = result[0]
+				if (group1 == "angry") {
+					document.getElementById("lblStatus1").innerHTML = "Angry";
+					document.getElementById("showEmotion1").setAttribute("src", "../static/images/angry.gif");
+				}
+				else if (group1 == "disgust") {
+					document.getElementById("lblStatus1").innerHTML = "Disgust";
+					document.getElementById("showEmotion1").setAttribute("src", "../static/images/disgust.gif");
+				}
+				else {
+					document.getElementById("lblStatus1").innerHTML = "Other";
+					document.getElementById("showEmotion1").setAttribute("src", "../static/images/neutral_1.gif");
+				}
 
 				//for group 2 result
 				var group2 = result[1]
+				if (group2 == "sad") {
+					document.getElementById("lblStatus2").innerHTML = "Sad";
+					document.getElementById("showEmotion2").setAttribute("src", "../static/images/sad.gif");
+				}
+				else if (group2 == "fear") {
+					document.getElementById("lblStatus2").innerHTML = "Fear";
+					document.getElementById("showEmotion2").setAttribute("src", "../static/images/fear.gif");
+				}
+				else if (group2 == "weak sad") {
+					document.getElementById("lblStatus2").innerHTML = "Weak Sad";
+					document.getElementById("showEmotion2").setAttribute("src", "../static/images/weak sad.gif");
+				}
+				else if (group2 == "mid sad") {
+					document.getElementById("lblStatus2").innerHTML = "Mid Sad";
+					document.getElementById("showEmotion2").setAttribute("src", "../static/images/mid sad.gif");
+				}
+				else if (group2 == "very sad") {
+					document.getElementById("lblStatus2").innerHTML = "Very Sad";
+					document.getElementById("showEmotion2").setAttribute("src", "../static/images/very sad.gif");
+					
+				}
+				else if (group2 == "weak fear") {
+					document.getElementById("lblStatus2").innerHTML = "Weak Fear";
+					document.getElementById("showEmotion2").setAttribute("src", "../static/images/weak fear.gif");
+				}
+				else if (group2 == "mid fear") {
+					document.getElementById("lblStatus2").innerHTML = "Mid Fear";
+					document.getElementById("showEmotion2").setAttribute("src", "../static/images/mid fear.gif");
+				}
+				else if (group2 == "very fear") {
+					document.getElementById("lblStatus2").innerHTML = "Very Fear";
+					document.getElementById("showEmotion2").setAttribute("src", "../static/images/very fear.gif");
+				}
 
 				//for group 3 result
 				var group3 = result[2]
