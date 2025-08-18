@@ -2,32 +2,224 @@
 
 {% block content %}
 
-<div class="jumbotron">
-    <h1>Flask</h1>
-    <p class="lead">Flask is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://flask.pocoo.org/" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+<script>
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+            var emotion_text = $('#input_emotion').val();
+            var form = new FormData();
+            form.append("emoji_input", emotion_text);
+
+            var settings = {
+                "url": "http://localhost:5555/detect_emoji",
+                "method": "POST",
+                "timeout": 0,
+                "processData": false,
+                "mimeType": "multipart/form-data",
+                "contentType": false,
+                "data": form
+            };
+
+            $.ajax(settings).done(function (response) {
+                var json = $.parseJSON(response);
+                $(json).each(function (i, val) {
+                    $.each(val, function (k, v) {
+                        if (k == "message") {
+                            var emotion_status = v.data[0]
+                            if (emotion_status == "happy") {
+                                $('#lblStatus3').html("Happy");
+                                $('#showEmotion3').attr("src", "../static/images/happy.gif");
+                            }
+                            else if (emotion_status == "surprise") {
+                                $('#lblStatus3').html("Surprise");
+                                $('#showEmotion3').attr("src", "../static/images/surprise.gif");
+                            }
+                            else if (emotion_status == "angry") {
+                                $('#lblStatus1').html("Angry");
+                                $('#showEmotion1').attr("src", "../static/images/angry.gif");
+                            }
+                            else if (emotion_status == "disgust") {
+                                $('#lblStatus1').html("Disgust");
+                                $('#showEmotion1').attr("src", "../static/images/disgust.gif");
+                            }
+
+                            else if (emotion_status == "sad") {
+                                $('#lblStatus2').html("Sad");
+                                $('#showEmotion2').attr("src", "../static/images/sad.gif");
+                            }
+                            else if (emotion_status == "fear") {
+                                $('#lblStatus2').html("Fear");
+                                $('#showEmotion2').attr("src", "../static/images/fear.gif");
+                            }
+                            else if (emotion_status == "weak sad") {
+                                $('#lblStatus2').html("Weak Sad");
+                                $('#showEmotion2').attr("src", "../static/images/weak sad.gif");
+                            }
+                            else if (emotion_status == "mid sad") {
+                                $('#lblStatus2').html("Mid Sad");
+                                $('#showEmotion2').attr("src", "../static/images/mid sad.gif");
+                            }
+                            else if (emotion_status == "very sad") {
+                                $('#lblStatus2').html("Very Sad");
+                                $('#showEmotion2').attr("src", "../static/images/very sad.gif");
+                            }
+                            else if (emotion_status == "weak fear") {
+                                $('#lblStatus2').html("Weak Fear");
+                                $('#showEmotion2').attr("src", "../static/images/weak fear.gif");
+                            }
+                            else if (emotion_status == "mid fear") {
+                                $('#lblStatus2').html("Mid Fear");
+                                $('#showEmotion2').attr("src", "../static/images/mid fear.gif");
+                            }
+                            else if (emotion_status == "very fear") {
+                                $('#lblStatus2').html("Very Fear");
+                                $('#showEmotion2').attr("src", "../static/images/very fear.gif");
+                            }
+                            else {
+
+                                $('#lblStatus1').html("Other");
+                                $('#showEmotion1').attr("src", "../static/images/neutral_1.gif");
+
+                                $('#lblStatus2').html("Other");
+                                $('#showEmotion2').attr("src", "../static/images/neutral_1.gif");
+
+                                $('#lblStatus3').html("Other");
+                                $('#showEmotion3').attr("src", "../static/images/neutral.gif");
+                            }
+                        }
+                        else {
+                            console.log(k + " : " + v);
+                        }
+                    });
+                });
+            });
+        });
+
+        $("#recordButton").click(function () {
+            $("#recordingsList").empty()
+        });
+
+        //$("#btnUpload").click(function () {
+        //    $('#lblStatus').html("Uploading...");
+
+        //    var form = new FormData();
+        //    form.append("upload_speech", filename);
+
+        //    var settings = {
+        //        "url": "http://localhost:5555/upload_speech",
+        //        "method": "POST",
+        //        "timeout": 0,
+        //        "processData": false,
+        //        "mimeType": "multipart/form-data",
+        //        "contentType": false,
+        //        "data": form
+        //    };
+
+        //    $.ajax(settings).done(function (response) {
+        //        var json = $.parseJSON(response);
+        //        $(json).each(function (i, val) {
+        //            $.each(val, function (k, v) {
+        //                if (k == "message") {
+        //                    var message = v.data[0]
+        //                    $('#lblStatus').html(message);
+        //                }
+        //            });
+        //        });
+        //    });
+        //});
+    });
+</script>
+<div class="c-main">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="card">
+                    <header class="card-header"><b>Emotion Detection Inputs</b></header>
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Input (Happy or Suprise): </span>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="input_emotion">
+                        </div>
+                        <br />
+                        <p><strong>Record voice and submit to detect emotion:</strong></p>
+                        <div id="controls">
+                            <button id="recordButton">Record</button>
+                            <button id="pauseButton" disabled>Pause</button>
+                            <button id="stopButton" disabled>Stop</button>
+                        </div>
+                        <div id="formats">Format: start recording to see sample rate</div>
+                        <p><strong>Recordings:</strong></p>
+                        <ol id="recordingsList"></ol>
+                    </div>
+                    <footer class="card-footer">
+                        <input class="btn btn-primary btn-sm" id="btnSubmit" value="Submit (Text Only)"></input>
+                        <input class="btn btn-primary btn-sm" id="btnUpload" value="Upload"></input>
+                    </footer>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div id="lblStatus" class="alert alert-success" role="alert">
+                    Emoji Detection by Speech!
+                </div>
+                <div class="accordion" id="myAccordion">
+                    <div class="panel">
+                        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapsible-1" data-parent="#myAccordion">Group 1</button>
+                        <div id="collapsible-1" class="collapse">
+                            <div class="card">
+                                <header class="card-header"><b>Result</b></header>
+                                <div class="card-body">
+
+                                    <div id='group_1_result'>
+                                        <div id="lblStatus1" class="d-flex p-2 bd-highlight" role="alert">
+                                            Other
+                                        </div>
+                                        <img id="showEmotion1" src="../static/images/neutral_1.gif" style="width:50%" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapsible-2" data-parent="#myAccordion">Group 2</button>
+                        <div id="collapsible-2" class="collapse">
+                            <div class="card">
+                                <header class="card-header"><b>Result</b></header>
+                                <div class="card-body">
+
+                                    <div id='group_2_result'>
+                                        <div id="lblStatus2" class="d-flex p-2 bd-highlight" role="alert">
+                                            Other
+                                        </div>
+                                        <img id="showEmotion2" src="../static/images/neutral_1.gif" style="width:50%" />
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#collapsible-3" data-parent="#myAccordion">Group 3</button>
+                        <div id="collapsible-3" class="collapse">
+                            <div class="card">
+                                <header class="card-header"><b>Result</b></header>
+                                <div class="card-body">
+                                    <div id='group_3_result'>
+                                        <div id="lblStatus3" class="d-flex p-2 bd-highlight" role="alert">
+                                            Other
+                                        </div>
+                                        <img id="showEmotion3" src="../static/images/neutral.gif" style="width:50%" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            Flask gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://flask.pocoo.org/docs/">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>The Python Package Index is a repository of software for the Python programming language.</p>
-        <p><a class="btn btn-default" href="https://pypi.python.org/pypi">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Microsoft Azure</h2>
-        <p>You can easily publish to Microsoft Azure using Visual Studio. Find out how you can host your application using a free trial today.</p>
-        <p><a class="btn btn-default" href="http://azure.microsoft.com">Learn more &raquo;</a></p>
-    </div>
-</div>
+
 
 {% endblock %}

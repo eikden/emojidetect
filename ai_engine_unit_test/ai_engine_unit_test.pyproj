@@ -12,7 +12,7 @@
     <OutputPath>.</OutputPath>
     <Name>ai_engine_unit_test</Name>
     <RootNamespace>ai_engine_unit_test</RootNamespace>
-    <InterpreterId>CondaEnv|CondaEnv|emoji</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|emoji_detect</InterpreterId>
     <TestFramework>unittest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -26,10 +26,17 @@
   <ItemGroup>
     <Folder Include="core\" />
     <Folder Include="core\connector\" />
+    <Folder Include="research\" />
+    <Folder Include="workflow\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="core\connector\sqlite3_connector_test.py" />
     <Compile Include="core\connector\ms_sql_connector_test.py" />
     <Compile Include="initial.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="research\main.py" />
+    <Compile Include="workflow\interface_test.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -38,7 +45,7 @@
     <Content Include="readme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="CondaEnv|CondaEnv|emoji" />
+    <InterpreterReference Include="CondaEnv|CondaEnv|emoji_detect" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

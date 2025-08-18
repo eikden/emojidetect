@@ -40,3 +40,149 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.navbar-inverse {
+    background-color: #ffffff !important;
+    border-color: #09145a !important;
+}
+
+    .navbar-inverse .navbar-brand {
+        color: #09145a !important;
+    }
+
+        .navbar-inverse .navbar-brand:hover {
+            color: #e23250 !important;
+        }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #09145a !important;
+    }
+
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: #e23250 !important;
+        }
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: .25rem;
+    background-color: #fff;
+    border: 1px solid #d8dbe0;
+}
+
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid;
+    border-color: #d8dbe0;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+
+.card-footer:last-child {
+    border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px);
+}
+
+.card-footer {
+    padding: .75rem 1.25rem;
+    background-color: #fff;
+    border-color: currentcolor #d8dbe0 #d8dbe0;
+    border-top: 1px solid #d8dbe0;
+}
+
+.c-main {
+    flex-basis: auto;
+    flex-shrink: 0;
+    flex-grow: 1;
+    min-width: 0;
+    padding-top: 2rem;
+}
+
+#controls {
+    display: flex;
+    margin-top: 2rem;
+    max-width: 28em;
+}
+
+button {
+    flex-grow: 1;
+    height: 3.5rem;
+    min-width: 2rem;
+    border: none;
+    border-radius: 0.15rem;
+    background: #ed341d;
+    margin-left: 2px;
+    box-shadow: inset 0 -0.15rem 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+    button:hover, button:focus {
+        outline: none;
+        background: #c72d1c;
+    }
+
+    button::-moz-focus-inner {
+        border: 0;
+    }
+
+    button:active {
+        box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.2);
+        line-height: 3rem;
+    }
+
+    button:disabled {
+        pointer-events: none;
+        background: lightgray;
+    }
+
+    button:first-child {
+        margin-left: 0;
+    }
+
+audio {
+    display: block;
+    width: 100%;
+    margin-top: 0.2rem;
+}
+
+#formats {
+    margin-top: 0.5rem;
+    font-size: 80%;
+}
+
+#recordingsList {
+    max-width: 28em;
+}
+
+.bd-highlight {
+    background-color: rgba(86,61,124,0.15);
+    border: 1px solid rgba(86,61,124,0.15);
+}
+
+.p-2 {
+    padding: .5rem !important;
+}
+
+.d-flex {
+    display: flex !important;
+}

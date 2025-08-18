@@ -17,7 +17,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>ai_api</Name>
     <RootNamespace>ai_api</RootNamespace>
-    <InterpreterId>CondaEnv|CondaEnv|emoji</InterpreterId>
+    <InterpreterId>CondaEnv|CondaEnv|emoji_detect</InterpreterId>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
     <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
   </PropertyGroup>
@@ -39,6 +39,9 @@
     <Compile Include="ai_api\models\Role.py" />
     <Compile Include="ai_api\models\User.py" />
     <Compile Include="ai_api\response\response.py" />
+    <Compile Include="ai_api\routes\api_trigger.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ai_api\routes\login.py" />
     <Compile Include="ai_api\routes\register.py" />
     <Compile Include="config.py" />
@@ -59,13 +62,43 @@
     <Folder Include="ai_api\static\" />
     <Folder Include="ai_api\static\content\" />
     <Folder Include="ai_api\static\fonts\" />
+    <Folder Include="ai_api\static\images\" />
     <Folder Include="ai_api\static\scripts\" />
     <Folder Include="ai_api\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ai_api\favicon.ico" />
     <Content Include="ai_api\response\__pycache__\response.cpython-37.pyc" />
+    <Content Include="ai_api\static\content\bootstrap-theme.css" />
+    <Content Include="ai_api\static\content\bootstrap-theme.css.map" />
+    <Content Include="ai_api\static\content\bootstrap-theme.min.css" />
+    <Content Include="ai_api\static\content\bootstrap-theme.min.css.map" />
+    <Content Include="ai_api\static\content\bootstrap.css.map" />
+    <Content Include="ai_api\static\content\bootstrap.min.css.map" />
+    <Content Include="ai_api\static\favicon.ico" />
+    <Content Include="ai_api\static\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="ai_api\static\images\angry.gif" />
+    <Content Include="ai_api\static\images\disgust.gif" />
+    <Content Include="ai_api\static\images\fear.gif" />
+    <Content Include="ai_api\static\images\mid fear.gif" />
+    <Content Include="ai_api\static\images\mid sad.gif" />
+    <Content Include="ai_api\static\images\neutral_1.gif" />
+    <Content Include="ai_api\static\images\sad.gif" />
+    <Content Include="ai_api\static\images\surprise.gif" />
+    <Content Include="ai_api\static\images\neutral.gif" />
+    <Content Include="ai_api\static\images\um-logo-402x203.png" />
+    <Content Include="ai_api\static\images\very fear.gif" />
+    <Content Include="ai_api\static\images\very sad.gif" />
+    <Content Include="ai_api\static\images\weak fear.gif" />
+    <Content Include="ai_api\static\images\weak sad.gif" />
+    <Content Include="ai_api\static\scripts\app.js" />
+    <Content Include="ai_api\static\scripts\jquery-3.5.1.min.js" />
+    <Content Include="ai_api\static\scripts\jquery-3.5.1.min.map" />
+    <Content Include="ai_api\static\scripts\npm.js" />
     <Content Include="ai_api\static\style.css" />
     <Content Include="ai_api\static\swagger.json" />
+    <Content Include="ai_api\static\images\happy.gif" />
+    <Content Include="favicon.ico" />
     <Content Include="requirements.txt" />
     <Content Include="ai_api\static\content\bootstrap.css" />
     <Content Include="ai_api\static\content\bootstrap.min.css" />
@@ -95,7 +128,7 @@
     <Content Include="ai_api\templates\layout.html" />
   </ItemGroup>
   <ItemGroup>
-    <InterpreterReference Include="CondaEnv|CondaEnv|emoji" />
+    <InterpreterReference Include="CondaEnv|CondaEnv|emoji_detect" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
   <!-- Specify pre- and post-build commands in the BeforeBuild and 
